@@ -95,35 +95,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
             selectedFontSize: 12,
             unselectedFontSize: 12,
             backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-            iconSize: 32,
+            iconSize: 34,
             onTap: _onItemTapped,
           ),
         )
       )
     );
   }
-}
-
-class CurvedBottomNavigationBarClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path = Path();
-    double curveHeight = 20;
-    double curveWidth = 40;
-
-    path.moveTo(0, 0);
-    path.lineTo(0, size.height - curveHeight);
-    path.quadraticBezierTo(
-        curveWidth / 2, size.height, curveWidth, size.height);
-    path.lineTo(size.width - curveWidth, size.height);
-    path.quadraticBezierTo(size.width - curveWidth / 2, size.height, size.width,
-        size.height - curveHeight);
-    path.lineTo(size.width, 0);
-    path.close();
-
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }

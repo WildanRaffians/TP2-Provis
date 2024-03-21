@@ -1,9 +1,5 @@
-// import 'package:example_app/button.dart';
-// import 'package:dihospital_home/jadwal.dart';
-import 'package:dihospital_home/main.dart';
 import 'package:dihospital_home/bottomNavBar.dart';
 import 'package:dihospital_home/emergency.dart';
-import 'package:dihospital_home/profil.dart';
 import 'package:flutter/material.dart';
 
 class Beranda extends StatefulWidget {
@@ -16,8 +12,6 @@ class _BerandaState extends State<Beranda> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // bottomNavigationBar: const BottomNavBar(idx: 0),
-
       appBar: AppBar(
         surfaceTintColor: Colors.white,
         automaticallyImplyLeading: false, // Menonaktifkan tombol kembali bawaan
@@ -48,31 +42,11 @@ class _BerandaState extends State<Beranda> {
       ),
 
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
         controller: ScrollController(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     Image.asset(
-            //       "assets/image/logo.png",
-            //       width: 40,
-            //       height: 40,
-            //     ),
-            //     const SizedBox(width: 4),
-            //     const Text(
-            //       'DIHospital',
-            //       style: TextStyle(
-            //         color: Color.fromARGB(255, 0, 0, 0),
-            //         fontSize: 20,
-            //         fontWeight: FontWeight.w800,
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            // const SizedBox(height: 20), // Tambahkan jarak antara logo/teks dengan "Layanan"
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -580,9 +554,7 @@ class _BerandaState extends State<Beranda> {
   }
 }
 
-// ignore: non_constant_identifier_names
 InkWell _informasiKesehatan(Map<String, dynamic> item) {
-  // var item = artikelKesehatan[index];
   return InkWell(
     onTap: () {},
     child: Container(
