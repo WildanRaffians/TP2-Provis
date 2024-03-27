@@ -27,8 +27,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   void initState() {
     super.initState();
-    _selectedIndex =
-        widget.idx; // Inisialisasi _selectedIndex dari properti initialIndex
+    _selectedIndex = widget.idx; // Inisialisasi _selectedIndex dari properti initialIndex
   }
 
   void _onItemTapped(int index) {

@@ -13,22 +13,25 @@ class _BerandaState extends State<Beranda> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        surfaceTintColor: Colors.white,
+        //Appbar
+        surfaceTintColor: Colors.white, //warna ketika di scroll
         automaticallyImplyLeading: false, // Menonaktifkan tombol kembali bawaan
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        flexibleSpace: Center(
+        flexibleSpace: Center(  //agar berada ditengah secara vertikal
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            // crossAxisAlignment: CrossAxisAlignment.center,
+            // Logo DIhospital
             children: [
               Image.asset(
+                //logo
                 "assets/image/logo.png",
                 width: 40,
                 height: 40,
               ),
               const SizedBox(width: 4), // Jarak antara logo dan teks
               const Text(
-                'DIHospital', // Teks yang ingin ditampilkan di sebelah logo
+                //Text
+                'DIHospital', // Teks ditampilkan di sebelah logo
                 style: TextStyle(
                   color: Color.fromARGB(255, 0, 0, 0), // Warna teks
                   fontSize: 20, // Ukuran teks
@@ -38,11 +41,11 @@ class _BerandaState extends State<Beranda> {
             ],
           ),
         ),
-        toolbarHeight: 70,
+        toolbarHeight: 70,  //Tinggi appbar
       ),
 
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+      body: SingleChildScrollView(  //body dengan scroll view
+        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),  //padding kedalam
         controller: ScrollController(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +53,7 @@ class _BerandaState extends State<Beranda> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Material(
+                Material( //Profil
                   child: InkWell(
                     onTap: () {
                       Navigator.pushAndRemoveUntil(
@@ -59,8 +62,9 @@ class _BerandaState extends State<Beranda> {
                         (Route<dynamic> route) => false,
                       );
                     },
-                    child: Row(children: [
+                    child: Row( children: [
                       Container(
+                        // poto profil
                         width: 40,
                         height: 40,
                         decoration: BoxDecoration(
@@ -80,11 +84,11 @@ class _BerandaState extends State<Beranda> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 8),
-                      const Column(
+                      const SizedBox(width: 8), //jarak image dan tulisan
+                      const Column( //nama dan gender
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          Text( //nama
                             'Celine Rodriguez',
                             style: TextStyle(
                               color: Colors.black,
@@ -92,7 +96,7 @@ class _BerandaState extends State<Beranda> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Row(
+                          Row(  //gender
                             children: [
                               Icon(
                                 Icons.female,
@@ -112,9 +116,9 @@ class _BerandaState extends State<Beranda> {
                     ]),
                   ),
                 ),
-                Row(
+                Row( //darurat dan notif
                   children: [
-                    Material(
+                    Material( //darurat
                       child: InkWell(
                         onTap: () {
                           // Navigasi ke halaman baru ketika widget ditekan
@@ -137,8 +141,7 @@ class _BerandaState extends State<Beranda> {
                                 const BorderRadius.all(Radius.circular(4)),
                           ),
                           child: const Row(
-                            mainAxisAlignment: MainAxisAlignment
-                                .center, // Center the icon and text horizontally
+                            mainAxisAlignment: MainAxisAlignment.center, // Center the icon and text horizontally
                             children: [
                               Text(
                                 'Darurat',
@@ -147,9 +150,7 @@ class _BerandaState extends State<Beranda> {
                                   fontSize: 14,
                                 ),
                               ),
-                              SizedBox(
-                                  width:
-                                      4), // Add spacing between icon and text
+                              SizedBox( width: 4), // Add spacing between icon and text
                               Icon(
                                 Icons.local_hospital,
                                 color: Color.fromARGB(255, 255, 62, 62),
@@ -161,7 +162,7 @@ class _BerandaState extends State<Beranda> {
                       ),
                     ),
                     const SizedBox(width: 8),
-                    Material(
+                    Material( //bell notif
                       child: InkWell(
                         onTap: () {
                           
@@ -172,7 +173,7 @@ class _BerandaState extends State<Beranda> {
                               Icons.notifications,
                               size: 35,
                             ),
-                            Positioned(
+                            Positioned( //titik merah
                               top: 5,
                               right: 5,
                               child: Container(
@@ -198,14 +199,13 @@ class _BerandaState extends State<Beranda> {
               ],
             ),
 
-            const Divider(
+            const Divider(  //garis batas
               thickness: 2,
               color: Colors.black,
             ),
-            const Padding(
-              padding: EdgeInsets.only(
-                  bottom: 5,
-                  top: 10), // Atur padding sebanyak yang Anda inginkan
+
+            const Padding(  //Teks layanan
+              padding: EdgeInsets.only(bottom: 5, top: 10), // Atur padding sebanyak yang Anda inginkan
               child: Text(
                 "Layanan",
                 style: TextStyle(
@@ -215,7 +215,7 @@ class _BerandaState extends State<Beranda> {
               ),
             ),
 
-            Container(
+            Container(  //Kotak Layanan
               padding: const EdgeInsets.all(12),
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
@@ -276,26 +276,23 @@ class _BerandaState extends State<Beranda> {
                       itemBuilder: (BuildContext context, index) {
                         var item = menuImage[index];
                         return Material(
-                          // color: Colors.transparent,
                           child: InkWell(
                             onTap: () {
                               // Tambahkan logika untuk menangani ketika item diklik di sini
                             },
                             child: Column(
                               children: [
-                                Expanded(
-                                  // backgroundColor: Colors.blue, // Atur warna latar belakang ikon
+                                Expanded(//atur icon
                                   child: Icon(
                                     item["icon"],
                                     size: 40,
-                                    color: const Color.fromARGB(
-                                        255, 1, 101, 252), // Atur warna ikon
+                                    color: const Color.fromARGB( 255, 1, 101, 252), // Atur warna ikon
                                   ),
                                 ),
                                 const SizedBox(
                                   height: 2,
                                 ),
-                                Text(
+                                Text(//atur label
                                   item["label"],
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(
@@ -313,14 +310,13 @@ class _BerandaState extends State<Beranda> {
                 ],
               ),
             ),
+
             const SizedBox(
               height: 24,
             ),
 
-            const Padding(
-              padding: EdgeInsets.only(
-                  bottom: 5,
-                  top: 10), // Atur padding sebanyak yang Anda inginkan
+            const Padding(  //Teks anda memiliki janji temu
+              padding: EdgeInsets.only(bottom: 5, top: 10),
               child: Text(
                 "Anda memiliki janji temu!",
                 style: TextStyle(
@@ -330,7 +326,7 @@ class _BerandaState extends State<Beranda> {
               ),
             ),
 
-            Container(
+            Container(//Card janji temu
               width: MediaQuery.of(context).size.width,
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
@@ -343,8 +339,8 @@ class _BerandaState extends State<Beranda> {
                   ],
                   borderRadius: const BorderRadius.all(Radius.circular(12))),
               child: Column(children: [
-                Row(children: [
-                  Container(
+                Row(children: [ //profil dokter
+                  Container(  //poto dokter
                     width: 60,
                     height: 60,
                     decoration: const BoxDecoration(
@@ -360,7 +356,7 @@ class _BerandaState extends State<Beranda> {
                     ),
                   ),
                   const SizedBox(width: 8),
-                  const Column(
+                  const Column( //nama, spesialis, asal RS
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -405,23 +401,24 @@ class _BerandaState extends State<Beranda> {
                 const SizedBox(
                   height: 12,
                 ),
-                Container(
+                Container(  //Waktu Konsultasi
                   width: MediaQuery.of(context).size.width,
-                  padding: const EdgeInsets.all(5),
+                  padding: const EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
                   decoration: const BoxDecoration(
                       color: Color.fromARGB(255, 8, 88, 209),
                       borderRadius: BorderRadius.all(Radius.circular(12))),
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
+                    children: [
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.calendar_month,
                             color: Colors.white,
                           ),
                           Padding(
-                              padding: EdgeInsets.all(5),
+                              padding: EdgeInsets.only(left: 5),
                               child: Text(
                                 "Senin, 18 Maret",
                                 style: TextStyle(
@@ -430,21 +427,21 @@ class _BerandaState extends State<Beranda> {
                               ))
                         ],
                       ),
-                      SizedBox(
-                        // Atur lebar sesuai kebutuhan
+                      SizedBox( //garis tengah
                         height: 25,
                         child: VerticalDivider(
                             thickness: 2,
                             color: Color.fromARGB(255, 41, 111, 215)),
                       ),
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.access_time_filled,
                             color: Colors.white,
                           ),
                           Padding(
-                              padding: EdgeInsets.all(5),
+                              padding: EdgeInsets.only(left: 5),
                               child: Text(
                                 "08.00-08.30",
                                 style: TextStyle(
@@ -459,7 +456,7 @@ class _BerandaState extends State<Beranda> {
                 const SizedBox(
                   height: 12,
                 ),
-                Material(
+                Material( //lihat detail, direct ke halaman jadwal
                   type: MaterialType.transparency,
                   child: InkWell(
                     onTap: () {},
@@ -482,13 +479,13 @@ class _BerandaState extends State<Beranda> {
                 ),
               ]),
             ),
+
             const SizedBox(
               height: 24,
             ),
-            const Padding(
-              padding: EdgeInsets.only(
-                  bottom: 5,
-                  top: 10), // Atur padding sebanyak yang Anda inginkan
+
+            const Padding(  //Teks informasi kesehatan
+              padding: EdgeInsets.only(bottom: 5, top: 10),
               child: Text(
                 "Informasi Kesehatan",
                 style: TextStyle(
@@ -498,12 +495,11 @@ class _BerandaState extends State<Beranda> {
               ),
             ),
 
-            Container(
+            Container(  //Tampilan informasi kesehatan
               height: 200,
               margin: const EdgeInsets.only(right: 10),
               child: Scrollbar(
-                thumbVisibility: true,
-                interactive: true,
+                thumbVisibility: true,  //agar scroll bar selalu muncul
                 controller: ScrollController(),
                 child: Builder(
                   builder: (context) {
@@ -519,7 +515,7 @@ class _BerandaState extends State<Beranda> {
                       "tgl" : "08 Jan 2024"
                     }
                     ];
-                    return ListView.separated(
+                    return ListView.separated(  //List view horizontal
                       itemCount: artikelKesehatan.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
@@ -538,10 +534,9 @@ class _BerandaState extends State<Beranda> {
         ),
       ),
       
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton( //Floating Action Button
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
-              30), // Mengatur bentuk lingkaran dengan borderRadius
+          borderRadius: BorderRadius.circular(30), // Mengatur bentuk lingkaran dengan borderRadius
         ),
         onPressed: () {},
         backgroundColor: const Color.fromARGB(255, 1, 101, 252),
@@ -549,12 +544,12 @@ class _BerandaState extends State<Beranda> {
           Icons.chat,
           color: Colors.white,
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
 
-InkWell _informasiKesehatan(Map<String, dynamic> item) {
+InkWell _informasiKesehatan(Map<String, dynamic> item) {  //Atur tampilan list view
   return InkWell(
     onTap: () {},
     child: Container(

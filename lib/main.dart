@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
         fontFamily: 'inter',
       ),
       home: const BottomNavBar(idx: 0),
-      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
